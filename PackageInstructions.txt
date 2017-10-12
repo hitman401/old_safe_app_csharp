@@ -1,0 +1,7 @@
+
+Download nuget.exe CLI from: https://www.nuget.org/downloads
+
+Build steps for Nuget Package:
+
+* Build Project in Release Mode
+* nuget.exe pack SafeApp.nuspec

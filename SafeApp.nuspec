@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.8.3">
+    <id>MaidSafe.SafeApp</id>
+    <version>0.0.1</version>
+    <title>Safe App Library for CSharp</title>
+    <authors>MaidSafe</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Safe App Library for CSharp to interface with the SAFE Network.
+    </description>
+    <summary>Safe App Library.</summary>
+    <tags>android, ios, csharp, netstandard1.2, xamarin</tags>
+    <projectUrl>https://github.com/maidsafe/safe_app_csharp/</projectUrl>
+    <licenseUrl>https://github.com/maidsafe/safe_app_csharp/blob/master/LICENSE</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/maidsafe/safe_app_csharp/master/package_icon.png</iconUrl>
+    <dependencies>
+      <group targetFramework="netstandard1.2">
+      </group>
+      <group targetFramework="MonoAndroid412">
+      </group>
+      <group targetFramework="Xamarin.iOS10">
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <!--NetStandard-->
+    <file src="SafeApp\bin\Release\netstandard1.2\SafeApp.dll" target="lib\netstandard1.2\SafeApp.dll" />
+    <file src="SafeApp\bin\Release\netstandard1.2\SafeApp.pdb" target="lib\netstandard1.2\SafeApp.pdb" />
+    <file src="SafeApp.NativeBindings\bin\Release\netstandard1.2\SafeApp.NativeBindings.dll"
+          target="lib\netstandard1.2\SafeApp.NativeBindings.dll" />
+    <file src="SafeApp.NativeBindings\bin\Release\netstandard1.2\SafeApp.NativeBindings.pdb"
+          target="lib\netstandard1.2\SafeApp.NativeBindings.pdb" />
+    <file src="SafeApp.Utilities\bin\Release\netstandard1.2\SafeApp.Utilities.dll"
+          target="lib\netstandard1.2\SafeApp.Utilities.dll" />
+    <file src="SafeApp.Utilities\bin\Release\netstandard1.2\SafeApp.Utilities.pdb"
+          target="lib\netstandard1.2\SafeApp.Utilities.pdb" />
+
+    <!--Xamarin.Android-->
+    <file src="SafeApp.NativeBindings.Android\Android.targets" target="build\MonoAndroid412\MaidSafe.SafeApp.targets" />
+    <file src="SafeApp.NativeBindings.Android\lib\**" target="build\MonoAndroid412\lib" />
+    <file src="SafeApp\bin\Release\netstandard1.2\SafeApp.dll" target="lib\MonoAndroid412\SafeApp.dll" />
+    <file src="SafeApp\bin\Release\netstandard1.2\SafeApp.pdb" target="lib\MonoAndroid412\SafeApp.pdb" />
+    <file src="SafeApp.NativeBindings.Android\bin\Release\SafeApp.NativeBindings.dll"
+          target="lib\MonoAndroid412\SafeApp.NativeBindings.dll" />
+    <file src="SafeApp.NativeBindings.Android\bin\Release\SafeApp.NativeBindings.pdb"
+          target="lib\MonoAndroid412\SafeApp.NativeBindings.pdb" />
+    <file src="SafeApp.Utilities\bin\Release\netstandard1.2\SafeApp.Utilities.dll"
+          target="lib\MonoAndroid412\SafeApp.Utilities.dll" />
+    <file src="SafeApp.Utilities\bin\Release\netstandard1.2\SafeApp.Utilities.pdb"
+          target="lib\MonoAndroid412\SafeApp.Utilities.pdb" />
+
+    <!--Xamarin.iOS-->
+    <file src="SafeApp.NativeBindings.iOS\iOS.targets" target="build\Xamarin.iOS10\MaidSafe.SafeApp.targets" />
+    <file src="SafeApp.NativeBindings.iOS\*.a" target="build\Xamarin.iOS10" />
+    <file src="SafeApp\bin\Release\netstandard1.2\SafeApp.dll" target="lib\Xamarin.iOS10\SafeApp.dll" />
+    <file src="SafeApp\bin\Release\netstandard1.2\SafeApp.pdb" target="lib\Xamarin.iOS10\SafeApp.pdb" />
+    <file src="SafeApp.NativeBindings.iOS\bin\Release\SafeApp.NativeBindings.dll"
+          target="lib\Xamarin.iOS10\SafeApp.NativeBindings.dll" />
+    <file src="SafeApp.NativeBindings.iOS\bin\Release\SafeApp.NativeBindings.pdb"
+          target="lib\Xamarin.iOS10\SafeApp.NativeBindings.pdb" />
+    <file src="SafeApp.Utilities\bin\Release\netstandard1.2\SafeApp.Utilities.dll"
+          target="lib\Xamarin.iOS10\SafeApp.Utilities.dll" />
+    <file src="SafeApp.Utilities\bin\Release\netstandard1.2\SafeApp.Utilities.pdb"
+          target="lib\Xamarin.iOS10\SafeApp.Utilities.pdb" />
+  </files>
+</package>

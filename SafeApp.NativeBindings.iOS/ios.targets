@@ -1,0 +1,13 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <NativeReference Include="$(MSBuildThisFileDirectory)libsafe_app.a">
+      <Kind>Static</Kind>
+      <ForceLoad>True</ForceLoad>
+      <LinkerFlags>-lresolv</LinkerFlags>
+    </NativeReference>
+    <NativeReference Include="$(MSBuildThisFileDirectory)libsodium.a">
+      <Kind>Static</Kind>
+      <ForceLoad>True</ForceLoad>
+    </NativeReference>
+  </ItemGroup>
+</Project>

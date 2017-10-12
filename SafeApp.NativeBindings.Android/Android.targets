@@ -1,0 +1,6 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <AndroidNativeLibrary Include="$(MSBuildThisFileDirectory)lib\armeabi-v7a\libsafe_app.so" />
+    <AndroidNativeLibrary Include="$(MSBuildThisFileDirectory)lib\x86\libsafe_app.so" />
+  </ItemGroup>
+</Project>
