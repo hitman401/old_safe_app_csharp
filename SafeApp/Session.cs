@@ -14,7 +14,7 @@ namespace SafeApp {
     private static volatile bool _isDisconnected;
     private static readonly INativeBindings NativeBindings = DependencyResolver.CurrentBindings;
 
-    private static readonly NetObsCb NetObs;
+    private static readonly IntCb NetObs;
     public static bool IsDisconnected { get => _isDisconnected; private set => _isDisconnected = value; }
 
     public static IntPtr AppPtr {
@@ -54,7 +54,7 @@ namespace SafeApp {
           };
           var authGrantedFfiPtr = Helpers.StructToPtr(authGrantedFfi);
 
-          AppRegisteredCb callback = (_, result, appPtr) => {
+          IntPtrCb callback = (_, result, appPtr) => {
             if (result.ErrorCode != 0) {
               tcs.SetException(result.ToException());
               return;
@@ -92,7 +92,7 @@ namespace SafeApp {
           DecodeContCb contCb = (_, id) => { tcs.SetResult(new DecodeIpcResult {ContReqId = id}); };
           DecodeShareMDataCb shareMDataCb = (_, id) => { tcs.SetResult(new DecodeIpcResult {ShareMData = id}); };
           DecodeRevokedCb revokedCb = _ => { tcs.SetResult(new DecodeIpcResult {Revoked = true}); };
-          DecodeErrorCb errorCb = (_, result) => { tcs.SetException(result.ToException()); };
+          ResultCb errorCb = (_, result) => { tcs.SetException(result.ToException()); };
 
           NativeBindings.DecodeIpcMessage(encodedReq, authCb, unregCb, contCb, shareMDataCb, revokedCb, errorCb);
 
@@ -138,7 +138,7 @@ namespace SafeApp {
         () => {
           var tcs = new TaskCompletionSource<bool>();
 
-          InitLoggingCb cb2 = (_, result) => {
+          ResultCb cb2 = (_, result) => {
             if (result.ErrorCode != 0) {
               tcs.SetException(result.ToException());
               return;
@@ -147,7 +147,7 @@ namespace SafeApp {
             tcs.SetResult(true);
           };
 
-          AppSetAdditionalSearchPathCb cb1 = (_, result) => {
+          ResultCb cb1 = (_, result) => {
             if (result.ErrorCode != 0) {
               tcs.SetException(result.ToException());
               return;
